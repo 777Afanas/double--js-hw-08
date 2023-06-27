@@ -11,16 +11,17 @@ const formData = {};
 
 function saveData(evt) {
   evt.preventDefault();
+   
+    formData[evt.target.name] = evt.target.value;     
+  
+  // const formElements = evt.currentTarget.elements;
+  // const email = formElements.email.value;
+  // const message = formElements.message.value;
+  // const dataForm = { email, message };
 
-    // formData[evt.target.name] = evt.target.value;     
-    // console.log(formData);  
+  // localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(dataForm));
+  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(formData));
 
-  const formElements = evt.currentTarget.elements;
-  const email = formElements.email.value;
-  const message = formElements.message.value;
-  const dataForm = { email, message };
-
-  localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(dataForm));
 }
 
 function updateForm() {
